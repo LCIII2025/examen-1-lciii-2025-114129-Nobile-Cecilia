@@ -18,14 +18,22 @@ public class Cliente {
     }
 
     public void agregarVehiculo(Vehiculo vehiculo) {
-        // TODO implementar la carga de vehiculos en el cliente
-
+        // TOD implementar la carga de vehiculos en el cliente
+        if (vehiculo != null) {
+            vehiculos.add(vehiculo);
+        }
     }
 
     public Vehiculo buscarVehiculoPorPatente(String patente) {
-        // TODO implementar la busqueda de un vehiculo segun su patente
-
-
+        // TOD implementar la busqueda de un vehiculo segun su patente
+        if(patente == null || patente.isBlank()) {
+            return null;
+        }
+        for (Vehiculo v : vehiculos) {
+            if (patente.equalsIgnoreCase(v.getPatente())){
+                return v;
+            }
+        }
         return null;
     }
 }
